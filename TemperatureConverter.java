@@ -1,0 +1,51 @@
+// Program to convert temperature from celsius to fahrenheit and vice versa
+import java.util.Scanner;
+
+class TemperatureConverter {
+    // Main method
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("1. Convert Celsius to Fahrenheit");
+        System.out.print("Enter the temperature in Celsius: ");
+        double celsius = input.nextDouble();
+
+        // Method to convert from celsius to fahrenheit
+        double fahrenheitTemp = celsiusToFahrenheit(celsius);
+
+        System.out.printf("Temperature in Fahrenheit: %.2f\n" , fahrenheitTemp);
+
+        System.out.println("2. Convert Fahrenheit to Celsius");
+        System.out.print("Enter the temperature in Fahrenheit: ");
+        double fahrenheit = input.nextDouble();
+
+        // Method to convert from fahrenheit to celsius
+        double celsiusTemp = fahrenheitToCelsius(fahrenheit);
+
+        System.out.printf("Temperature in Celsius: %.2f\n" , celsiusTemp);
+
+        input.close();
+    }
+    
+    // Method to convert from celsius to fahrenheit
+    public static double celsiusToFahrenheit(double celsius) {
+        return (celsius * 9/5) + 32;
+    }
+
+    // Method to convert from fahrenheit to celsius
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5/9;
+    }
+}
+// Sample Input ->
+// 1. Convert Celsius to Fahrenheit
+// Enter the temperature in Celsius: 37
+
+// Sample Output ->
+// Temperature in Fahrenheit: 98.60
+
+// 2. Convert Fahrenheit to Celsius
+// Enter the temperature in Fahrenheit: 98.6
+
+// Sample Output ->
+// Temperature in Celsius: 37.00
